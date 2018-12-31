@@ -1,17 +1,17 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: nginx-ingress
+  name: sdp-website-ingress
   annotations:     
     # Annotations for Nginx ingress controller:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: mynginx.example.com
+  - host: sdp-website.example.com
     http:
       paths:
-      - path: /web
+      - path: /
         backend:
-          serviceName: nginx-service
+          serviceName: sdp-website-service
           servicePort: 80

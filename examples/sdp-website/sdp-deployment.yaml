@@ -1,16 +1,16 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: nginx
+  name: sdp-website
 spec:
   replicas: 3
   template:
     metadata:
       labels:
-        app: nginx
+        app: sdp-website
     spec:
       containers:
-        - name: nginx
-          image: nginx
+        - name: sdp-website
+          image: ofirmakmal/sdp-website:v1
           ports:
             - containerPort: 80
