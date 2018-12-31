@@ -1,0 +1,1 @@
+helm install --name elk-stack stable/elastic-stack

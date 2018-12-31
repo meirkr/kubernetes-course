@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: nginx-ingress
+  annotations:     
+    # Annotations for Nginx ingress controller:
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: mynginx.example.com
+    http:
+      paths:
+      - path: /web
+        backend:
+          serviceName: nginx-service
+          servicePort: 80
